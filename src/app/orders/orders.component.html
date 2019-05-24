@@ -1,0 +1,24 @@
+<table class="table table-striped table-sm">
+  <tr>
+  <th>orderNumber</th>
+	<th>orderDate</th>
+  <th>requiredDate</th>
+  <th>shippedDate</th>
+  <th>status</th>
+  <th>comments</th>
+  <th>customerNumber</th>
+  </tr>
+  
+  <tr *ngFor="let f of OrdersList"> 
+    <th>{{f.orderNumber}}</th>
+    <th>{{f.orderDate}}</th>
+    <th>{{f.requiredDate}}</th>
+    <th>{{f.shippedDate}}</th>
+    <th>{{f.status}}</th>
+    <th>{{f.comments}}</th>
+    <th>{{f.customerNumber}}</th>
+    <!--<th><button (click)="getFilmById(f.filmId)">Edit</button></th>
+    <th><button [routerLink]="['/edit/',f.filmId]">edit</button></th>
+    <th><button (click)="delFilm(f.filmId)">Delete</button></th>-->
+  </tr>
+</table>
