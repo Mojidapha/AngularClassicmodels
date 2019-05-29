@@ -5,4 +5,12 @@
   <th>htmlDescription</th>
   <th>image</th>
   </tr>
+
+  <tr *ngFor="let f of ProductlinesList"> 
+    <th>{{f.productLine}}</th>
+    <th>{{f.textDescription}}</th>
+    <th>{{f.htmlDescription}}</th>
+    <th>{{f.image}}</th>
+  </tr>
+
 </table>

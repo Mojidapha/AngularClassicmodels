@@ -9,4 +9,15 @@
   <th>reportsTo</th>
   <th>jobTitle</th>
   </tr>
+
+  <tr *ngFor="let f of EmployeesList"> 
+    <th>{{f.employeeNumber}}</th>
+    <th>{{f.lastName}}</th>
+    <th>{{f.firstName}}</th>
+    <th>{{f.extension}}</th>
+    <th>{{f.email}}</th>
+    <th>{{f.officeCode}}</th>
+    <th>{{f.reportsTo}}</th>
+    <th>{{f.jobTitle}}</th>
+  </tr>
 </table>

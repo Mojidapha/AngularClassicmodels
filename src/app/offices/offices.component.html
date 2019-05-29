@@ -10,4 +10,19 @@
   <th>postalCode</th>
   <th>territory</th>
   </tr>
+
+  <tr *ngFor="let f of OfficesList"> 
+    <th>{{f.officeCode}}</th>
+    <th>{{f.city}}</th>
+    <th>{{f.phone}}</th>
+    <th>{{f.addressLine1}}</th>
+    <th>{{f.addressLine2}}</th>
+    <th>{{f.state}}</th>
+    <th>{{f.country}}</th>
+    <th>{{f.postalCode}}</th>
+    <th>{{f.territory}}</th>
+    <!--<th><button (click)="getFilmById(f.filmId)">Edit</button></th>
+    <th><button [routerLink]="['/edit/',f.filmId]">edit</button></th>
+    <th><button (click)="delFilm(f.filmId)">Delete</button></th>-->
+  </tr>
 </table>

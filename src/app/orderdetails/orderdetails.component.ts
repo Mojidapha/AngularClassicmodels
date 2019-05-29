@@ -17,6 +17,7 @@ export class OrderdetailsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.getAllOrderdetails();
   }
 
   getAllOrderdetails(): void {

@@ -14,5 +14,24 @@
   <th>salesRepEmployeeNumber</th>
   <th>creditLimit</th>
   </tr>
+
+  <tr *ngFor="let f of CustomersList"> 
+    <th>{{f.customerNumber}}</th>
+    <th>{{f.customerName}}</th>
+    <th>{{f.contactLastName}}</th>
+    <th>{{f.contactFirstName}}</th>
+    <th>{{f.phone}}</th>
+    <th>{{f.addressLine1}}</th>
+    <th>{{f.addressLine2}}</th>
+    <th>{{f.city}}</th>
+    <th>{{f.state}}</th>
+    <th>{{f.postalCode}}</th>
+    <th>{{f.country}}</th>
+    <th>{{f.salesRepEmployeeNumber}}</th>
+    <th>{{f.creditLimit}}</th>
+    <!--<th><button (click)="getFilmById(f.filmId)">Edit</button></th>
+    <th><button [routerLink]="['/edit/',f.filmId]">edit</button></th>
+    <th><button (click)="delFilm(f.filmId)">Delete</button></th>-->
+  </tr>
   
 </table>

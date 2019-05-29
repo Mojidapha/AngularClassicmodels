@@ -6,4 +6,12 @@
   <th>priceEach</th>
   <th>orderLineNumber</th>
   </tr>
+
+  <tr *ngFor="let f of OrderdetailsList"> 
+    <th>{{f.orderNumber}}</th>
+    <th>{{f.productCode}}</th>
+    <th>{{f.quantityOrdered}}</th>
+    <th>{{f.priceEach}}</th>
+    <th>{{f.orderLineNumber}}</th>
+  </tr>
 </table>

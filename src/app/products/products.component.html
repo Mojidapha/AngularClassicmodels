@@ -10,4 +10,16 @@
   <th>buyPrice</th>
   <th>MSRP</th>
   </tr>
+
+  <tr *ngFor="let f of ProductsList"> 
+    <th>{{f.productCode}}</th>
+    <th>{{f.productName}}</th>
+    <th>{{f.productLine}}</th>
+    <th>{{f.productScale}}</th>
+    <th>{{f.productVendor}}</th>
+    <th>{{f.productDescription}}</th>
+    <th>{{f.quantityInStock}}</th>
+    <th>{{f.buyPrice}}</th>
+    <th>{{f.MSRP}}</th>
+  </tr>
 </table>

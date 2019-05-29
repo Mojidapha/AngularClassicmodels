@@ -17,6 +17,7 @@ export class PaymentsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.getAllPayments();
   }
   getAllPayments(): void {
     this.paymentsService.getPayments()

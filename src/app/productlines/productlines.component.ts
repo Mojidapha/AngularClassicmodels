@@ -17,6 +17,7 @@ export class ProductlinesComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.getAllProductlines();
   }
 
   getAllProductlines(): void {

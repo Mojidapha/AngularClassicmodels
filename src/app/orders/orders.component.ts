@@ -23,6 +23,7 @@ export class OrdersComponent implements OnInit {
   getAllOrders(): void {
     this.ordersService.getOrders()
       .subscribe(response => this.OrdersList = response);
+      console.log(this.OrdersList);
   }
 
 }
