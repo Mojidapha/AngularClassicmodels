@@ -2,7 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap} from 'rxjs/operators';
-import { Order } from './Orders';
+import { Orders } from './Orders';
+
+const httpOption = {
+  headers : new HttpHeaders({ 'Content-Type' : 'application/json' })
+};
 
 @Injectable({
   providedIn: 'root'
@@ -10,17 +14,26 @@ import { Order } from './Orders';
 export class OrdersService {
 
   private AllOrdersUrl = 'http://localhost:8080/classicmodels/api/allOrders';
+  private AddOrdersUrl = 'http://localhost:8080/classicmodels/api/addOrders';
 
   constructor(
     private http : HttpClient
   ) { }
 
-  getOrders(): Observable<Order[]>{
-    return this.http.get<Order[]>(this.AllOrdersUrl)
+  getOrders(): Observable<Orders[]>{
+    return this.http.get<Orders[]>(this.AllOrdersUrl)
     .pipe(
       tap(_ => console.log('fetched Orders')),
       catchError(this.handleError('getOrders',[]))
     )
+}
+
+AddOrders(orders): Observable<any>{
+  return this.http.post<any>(this.AddOrdersUrl,orders,httpOption)
+  .pipe(
+    tap(_ => console.log('fetched orders')),
+    catchError(this.handleError('AddOrders',[]))
+  )
 }
 
 

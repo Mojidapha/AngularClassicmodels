@@ -1,4 +1,6 @@
-export class Order{
+import { Orderdetails } from './Orderdetails';
+
+export class Orders{
 
     orderNumber : number;
 	orderDate : Date;
@@ -7,6 +9,8 @@ export class Order{
 	status : string;
 	comments : string;
 	customerNumber : number;
+
+	orderdetailList: Orderdetails[];
 
 }
 

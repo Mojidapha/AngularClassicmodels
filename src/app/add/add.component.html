@@ -1,0 +1,37 @@
+<div>
+  <!--order Number: <input type="number" [(ngModel)]="orders.orderNumber" ><br><br>-->
+  order Date : <input class="form-control" placeholder="yyyy-mm-dd" name="orderDate" [(ngModel)]="orders.orderDate" ngbDatepicker #o="ngbDatepicker">
+              <div class="input-group-append">
+                 <button class="btn btn-outline-secondary calendar" (click)="o.toggle()" type="button">Date</button>{{orders.ordersDate | json}}
+              </div><br>
+  required Date : <input class="form-control" placeholder="yyyy-mm-dd" name="requiredDate" [(ngModel)]="orders.requiredDate" ngbDatepicker #r="ngbDatepicker">
+              <div class="input-group-append">
+                 <button class="btn btn-outline-secondary calendar" (click)="r.toggle()" type="button">Date</button>
+              </div><br>
+  shipped Date : <input class="form-control" placeholder="yyyy-mm-dd" name="shippedDate" [(ngModel)]="orders.shippedDate" ngbDatepicker #s="ngbDatepicker">
+              <div class="input-group-append">
+                 <button class="btn btn-outline-secondary calendar" (click)="s.toggle()" type="button">Date</button>
+              </div><br>
+  status: <select id="status" [(ngModel)]="orders.status">
+    <option value="Shipped">Shipped</option>
+    <option value="Cancelled">Cancelled</option>
+  </select><br><br>
+  comments: <input type="text" id="comments" [(ngModel)]="orders.comments"/><br><br>
+  customer Name: <select id="customerNumber" [(ngModel)]="orders.customerNumber"><br><br>
+    <option *ngFor="let c of CustomersList" [ngValue]="c.customerNumber" >
+      {{c.customerName}}
+    </option>
+  </select><br><br>
+
+  product Name: <select id="productCode" [(ngModel)]="orders.productCode"><br><br>
+    <option *ngFor="let p of ProductsList" [ngValue]="p.productCode" >
+      {{p.productName}}
+    </option>
+  </select><br><br>
+
+  quantity Ordered: <input type="number" [(ngModel)]="orders.quantityOrdered" ><br><br>
+  price Each:  <input type="number" step="any" [(ngModel)]="orders.priceEach"><br><br>
+  order Line Number: <input type="number" [(ngModel)]="orders.orderLineNumber"><br><br>
+  
+  <button (click)="AddOrders(orders)">submit</button>
+</div>

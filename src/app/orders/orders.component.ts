@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Order } from '../Orders';
+import { Orders } from '../Orders';
 import { OrdersService } from '../orders.service';
 import {Router} from '@angular/router';
 
@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
 })
 export class OrdersComponent implements OnInit {
 
-  OrdersList: Order[];
+  OrdersList: Orders[];
   constructor(
     private ordersService : OrdersService,
     private router: Router
@@ -25,5 +25,7 @@ export class OrdersComponent implements OnInit {
       .subscribe(response => this.OrdersList = response);
       console.log(this.OrdersList);
   }
+
+  
 
 }

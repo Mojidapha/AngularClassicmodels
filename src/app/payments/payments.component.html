@@ -7,8 +7,8 @@
   </tr>
 
   <tr *ngFor="let f of PaymentsList"> 
-    <th>{{f.customerNumber}}</th>
-    <th>{{f.checkNumber}}</th>
+    <th>{{f.id.customerNumber}}</th>
+    <th>{{f.id.checkNumber}}</th>
     <th>{{f.paymentDate}}</th>
     <th>{{f.amount}}</th>
   </tr>

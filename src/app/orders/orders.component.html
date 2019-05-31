@@ -7,6 +7,9 @@
   <th>status</th>
   <th>comments</th>
   <th>customerNumber</th>
+  <th>Add</th>
+  <th>edit</th>
+  <th>delete</th>
   </tr>
   
   <tr *ngFor="let f of OrdersList"> 
@@ -17,6 +20,9 @@
     <th>{{f.status}}</th>
     <th>{{f.comments}}</th>
     <th>{{f.customerNumber}}</th>
+    <th><button  routerLink="/add">ADD</button></th>
+    <th><button >EDIT</button></th>
+    <th><button >DELETE</button></th>
     <!--<th><button (click)="getFilmById(f.filmId)">Edit</button></th>
     <th><button [routerLink]="['/edit/',f.filmId]">edit</button></th>
     <th><button (click)="delFilm(f.filmId)">Delete</button></th>-->
