@@ -26,7 +26,8 @@
     <option *ngFor="let p of ProductsList" [ngValue]="p.productCode" >
       {{p.productName}}
     </option>
-  </select><br><br>
+  </select>
+  <br><br>
 
   quantity Ordered: <input type="number" [(ngModel)]="orders.quantityOrdered" ><br><br>
   price Each:  <input type="number" step="any" [(ngModel)]="orders.priceEach"><br><br>
