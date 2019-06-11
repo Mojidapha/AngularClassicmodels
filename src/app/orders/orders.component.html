@@ -21,7 +21,8 @@
     <th>{{f.comments}}</th>
     <th>{{f.customerNumber}}</th>
     <th><button  routerLink="/add">ADD</button></th>
-    <th><button >EDIT</button></th>
+    <th><button  routerLink="/edit/{{f.orderNumber}}">EDIT</button></th>
+   <!-- <th><button  routerLink="['/edit/',f.orderNumber]">EDIT</button></th>-->
     <th><button >DELETE</button></th>
     <!--<th><button (click)="getFilmById(f.filmId)">Edit</button></th>
     <th><button [routerLink]="['/edit/',f.filmId]">edit</button></th>

@@ -1,5 +1,4 @@
 <div>
-  <!--order Number: <input type="number" [(ngModel)]="orders.orderNumber" ><br><br>-->
   order Date : <input class="form-control" placeholder="yyyy-mm-dd" name="orderDate" [(ngModel)]="orders.orderDate" ngbDatepicker #o="ngbDatepicker">
               <div class="input-group-append">
                  <button class="btn btn-outline-secondary calendar" (click)="o.toggle()" type="button">Date</button>{{orders.ordersDate | json}}

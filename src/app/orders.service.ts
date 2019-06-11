@@ -12,9 +12,10 @@ const httpOption = {
   providedIn: 'root'
 })
 export class OrdersService {
-
+  
   private AllOrdersUrl = 'http://localhost:8080/classicmodels/api/allOrders';
   private AddOrdersUrl = 'http://localhost:8080/classicmodels/api/addOrders';
+  private EditOrdersUrl = 'http://localhost:8080/classicmodels/api/editOrders?orderNumber=';
 
   constructor(
     private http : HttpClient
@@ -28,14 +29,21 @@ export class OrdersService {
     )
 }
 
-AddOrders(orders): Observable<any>{
-  return this.http.post<any>(this.AddOrdersUrl,orders,httpOption)
-  .pipe(
-    tap(_ => console.log('fetched orders')),
-    catchError(this.handleError('AddOrders',[]))
-  )
-}
+  AddOrders(orders): Observable<any>{
+    return this.http.post<any>(this.AddOrdersUrl,orders,httpOption)
+    .pipe(
+      tap(_ => console.log('fetched orders')),
+      catchError(this.handleError('AddOrders',[]))
+    )
+  }
 
+  editOrders(orderNumber): Observable<any>{
+    return this.http.get<any>(this.EditOrdersUrl+orderNumber)
+    .pipe(
+      tap(_ => console.log('fetched orders')),
+      catchError(this.handleError('editOrders',[]))
+    )
+}
 
     /**
  * Handle Http operation that failed.

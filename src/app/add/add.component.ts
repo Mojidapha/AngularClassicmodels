@@ -8,7 +8,6 @@ import { Customers } from '../customers';
 import { CustomersService } from '../customers.service';
 import { Products } from '../Products';
 import { ProductsService } from '../products.service';
-import { Orderdetails } from '../Orderdetails';
 
 @Component({
   selector: 'app-add',
@@ -68,10 +67,21 @@ export class AddComponent implements OnInit {
           max=i.orderNumber;
       }
    }
-    orders.orderNumber=max+1;
+    //orders.orderNumber=max+1;
+    orders.orderNumber=max;
     console.log(orders);
-   /* this.ordersService.AddOrders(orders)
-    .subscribe(Response => this.gotoIndex(Response));*/
+    console.log(orders.quantityOrdered);
+
+    orders.orderdetails=[{
+      orderNumber: orders.orderNumber,
+      quantityOrdered: orders.quantityOrdered,
+      priceEach: orders.priceEach,
+      orderLineNumber: orders.orderLineNumber,
+      productCode: orders.productCode
+    }]
+
+   this.ordersService.AddOrders(orders)
+    .subscribe(Response => this.gotoIndex(Response));
  }
   gotoIndex(status): void{
     console.log(status);

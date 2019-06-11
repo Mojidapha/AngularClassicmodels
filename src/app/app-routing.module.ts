@@ -9,6 +9,7 @@ import { PaymentsComponent } from './payments/payments.component';
 import { ProductlinesComponent } from './productlines/productlines.component';
 import { ProductsComponent } from './products/products.component';
 import { AddComponent } from './add/add.component';
+import { EditComponent } from './edit/edit.component';
 
 const routes: Routes = [
   {path: 'customers', component:CustomersComponent},
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path: 'payments', component:PaymentsComponent},
   {path: 'productlines', component:ProductlinesComponent},
   {path: 'products', component:ProductsComponent},
-  {path: 'add', component:AddComponent}
+  {path: 'add', component:AddComponent},
+  {path: 'edit/:orderNumber', component:EditComponent}
 ];
 
 @NgModule({

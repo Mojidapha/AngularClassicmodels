@@ -26,6 +26,18 @@ export class OrdersComponent implements OnInit {
       console.log(this.OrdersList);
   }
 
+
+  editOrders(orderNumber): void{
+    console.log(orderNumber);
+    this.router.navigate(['/edit',orderNumber]).then( (e) =>{
+      if (e) {
+        console.log("Navigation is successful!");
+      }
+      else{
+        console.log("Navigation has failed!");
+      }
+  });
+}
   
 
 }
